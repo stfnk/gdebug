@@ -18,7 +18,7 @@ func _clear_prints() -> void:
 	_messages.resize(0)
 	_screen_messages.resize(0)
 
-func draw() -> void:
+func _draw() -> void:
 	var y: float = 0.0 # relative to rect
 	var x: float = 0.0 # ^^
 	var font: Font = get_font("")
@@ -30,8 +30,8 @@ func draw() -> void:
 		y += line_height
 	
 	# draw positioned prints
-	for format in _formats:
-		draw_string(font, format.position, format.message, Color(1.0,1.0,1.0,0.5))
+	for scr_msg in _screen_messages:
+		draw_string(font, scr_msg.position, scr_msg.message, Color(1.0,1.0,1.0,0.5))
 
 	# current state drawn, clear arrays
 	_clear_prints()
