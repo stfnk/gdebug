@@ -1,13 +1,15 @@
-# gDebugGui - *Immediate Mode* Debug UI for Godot
+# gdebug - *Immediate Mode* Debug UI for Godot
 
-gDebug is a small collection of helper scripts to display debug information on screen during game runtime.
+gdebug is a small collection of helper scripts to display debug information on screen during game runtime.
 It currently supports simple text drawing and small plots, useful for monitoring values change over time.
 
 ### Overview
-gDebug aims to be as straight forward to use as possible, highly inspired by immediate mode gui systems like Unity's `OnGui()` functionality. As its content is cleared after each draw, it should be mostly called recurringly from `_process()` (or similar every-frame-methods)  
+gdebug aims to be as straight forward to use as possible, highly inspired by immediate mode gui systems like Unity's `OnGui()` functionality. As its content is cleared after each draw, it should be mostly called recurringly from `_process()` (or similar every-frame-methods)  
 
 It consists of the main `Debug.gd` class and several submodules, automatically created when requested.
 The main class also acts as a wrapper and provides all submodule functionality through a unified interface.
+
+The `Debug.gd` script should be added to the Autoloads in the project settings, for easy access from other scripts.
 
 ### Modules
 **Printer**</br>
